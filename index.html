@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Your Fitness Journey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/dumbbell.svg" alt="FitTrack Logo" class="logo">
+            <span>FitTrack</span>
+        </div>
+        <button class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="about">About</a>
+            <a href="#" class="nav-link" data-page="services">Services</a>
+            <a href="#" class="nav-link" data-page="workouts">Workouts</a>
+            <a href="#" class="nav-link" data-page="nutrition">Nutrition</a>
+            <a href="#" class="nav-link" data-page="profile">Profile</a>
+            <a href="#" class="nav-link" data-page="news">News</a>
+            <a href="#" class="nav-link" data-page="contact">Contact</a>
+            <div class="auth-buttons">
+                <button class="btn login-btn" data-page="login">Login</button>
+                <button class="btn signup-btn" data-page="signup">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1>Transform Your Life Through Fitness</h1>
+                <p>Track your workouts, achieve your goals, and become the best version of yourself</p>
+                <button class="btn cta-btn" data-page="signup">Get Started</button>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <h2>About Us</h2>
+            <p>FitTrack is your ultimate companion in your fitness journey. We provide comprehensive tools and support to help you achieve your fitness goals.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Expert Guidance</h3>
+                    <p>Get personalized workout plans from certified trainers</p>
+                </div>
+                <div class="feature">
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your improvements with detailed analytics</p>
+                </div>
+                <div class="feature">
+                    <h3>Community Support</h3>
+                    <p>Join a community of fitness enthusiasts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Workout Tracking</h3>
+                    <p>Log and monitor your daily workouts</p>
+                </div>
+                <div class="service-card">
+                    <h3>Nutrition Planning</h3>
+                    <p>Customized meal plans for your goals</p>
+                </div>
+                <div class="service-card">
+                    <h3>Progress Analytics</h3>
+                    <p>Detailed insights into your fitness journey</p>
+                </div>
+                <div class="service-card">
+                    <h3>Personal Training</h3>
+                    <p>One-on-one coaching sessions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workouts Page -->
+        <section id="workouts" class="page">
+            <h2>Workout Log</h2>
+            <div class="workout-container">
+                <div class="calendar-section">
+                    <div class="calendar-header">
+                        <button id="prevMonth">&lt;</button>
+                        <h3 id="currentMonth">March 2024</h3>
+                        <button id="nextMonth">&gt;</button>
+                    </div>
+                    <div class="calendar-grid" id="calendar">
+                        <!-- Calendar will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="workout-log">
+                    <h3>Log Workout</h3>
+                    <form id="workoutForm" class="workout-form">
+                        <div class="form-group">
+                            <label for="workoutType">Workout Type</label>
+                            <select id="workoutType" required>
+                                <option value="strength">Strength Training</option>
+                                <option value="cardio">Cardio</option>
+                                <option value="yoga">Yoga</option>
+                                <option value="hiit">HIIT</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration (minutes)</label>
+                            <input type="number" id="duration" required min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="intensity">Intensity</label>
+                            <select id="intensity" required>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Log Workout</button>
+                    </form>
+                </div>
+                <div class="progress-tracker">
+                    <h3>Progress Tracker</h3>
+                    <div class="progress-charts">
+                        <canvas id="workoutChart"></canvas>
+                        <canvas id="weightChart"></canvas>
+                    </div>
+                    <div class="goals-section">
+                        <h4>Goals</h4>
+                        <div class="goal-items">
+                            <div class="goal-item">
+                                <span>Weekly Workouts</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%"></div>
+                                </div>
+                                <span>3/4</span>
+                            </div>
+                            <div class="goal-item">
+                                <span>Monthly Weight Goal</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
+                                <span>-3.5/4 kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nutrition Page -->
+        <section id="nutrition" class="page">
+            <h2>Nutrition Planning</h2>
+            <div class="nutrition-container">
+                <div class="meal-plan">
+                    <h3>Daily Meal Plan</h3>
+                    <div class="meal-slots">
+                        <div class="meal-slot">
+                            <h4>Breakfast</h4>
+                            <div class="meal-items" id="breakfast">
+                                <!-- Meal items will be added dynamically -->
+                            </div>
+                            <button class="btn add-meal" data-meal="breakfast">Add Item</button>
+                        </div>
+                        <div class="meal-slot">
+                            <h4>Lunch</h4>
+                            <div class="meal-items" id="lunch">
+                                <!-- Meal items will be added dynamically -->
+                            </div>
+                            <button class="btn add-meal" data-meal="lunch">Add Item</button>
+                        </div>
+                        <div class="meal-slot">
+                            <h4>Dinner</h4>
+                            <div class="meal-items" id="dinner">
+                                <!-- Meal items will be added dynamically -->
+                            </div>
+                            <button class="btn add-meal" data-meal="dinner">Add Item</button>
+                        </div>
+                        <div class="meal-slot">
+                            <h4>Snacks</h4>
+                            <div class="meal-items" id="snacks">
+                                <!-- Meal items will be added dynamically -->
+                            </div>
+                            <button class="btn add-meal" data-meal="snacks">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrition-stats">
+                    <h3>Daily Nutrition Stats</h3>
+                    <div class="macro-tracking">
+                        <div class="macro-item">
+                            <span>Calories</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <span>1500/2000</span>
+                        </div>
+                        <div class="macro-item">
+                            <span>Protein</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                            <span>120/150g</span>
+                        </div>
+                        <div class="macro-item">
+                            <span>Carbs</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <span>180/300g</span>
+                        </div>
+                        <div class="macro-item">
+                            <span>Fats</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                            <span>49/70g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profile" class="page">
+            <h2>User Profile</h2>
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img src="" alt="Profile Picture">
+                    </div>
+                    <div class="profile-info">
+                        <h3>John Doe</h3>
+                        <p>Fitness Enthusiast</p>
+                        <p>Member since: January 2024</p>
+                    </div>
+                </div>
+                <div class="achievements-section">
+                    <h3>Achievements</h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/medal.svg" alt="Achievement" class="achievement-icon">
+                            <h4>30 Day Streak</h4>
+                            <p>Completed workouts for 30 consecutive days</p>
+                        </div>
+                        <div class="achievement-card">
+                            <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/trophy.svg" alt="Achievement" class="achievement-icon">
+                            <h4>Weight Goal</h4>
+                            <p>Reached first weight milestone</p>
+                        </div>
+                        <div class="achievement-card">
+                            <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/target.svg" alt="Achievement" class="achievement-icon">
+                            <h4>Perfect Week</h4>
+                            <p>Completed all planned workouts in a week</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-overview">
+                    <h3>Statistics Overview</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Total Workouts</h4>
+                            <p>47</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Hours Trained</h4>
+                            <p>86</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Weight Lost</h4>
+                            <p>8.5 kg</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Goals Completed</h4>
+                            <p>12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Page -->
+        <section id="news" class="page">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>New Features Released</h3>
+                    <p>Explore our latest tracking capabilities</p>
+                    <span class="date">March 15, 2024</span>
+                </article>
+                <article class="news-card">
+                    <h3>Success Stories</h3>
+                    <p>Read about our members' transformations</p>
+                    <span class="date">March 10, 2024</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login" class="page">
+            <div class="auth-form">
+                <h2>Login</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Signup Page -->
+        <section id="signup" class="page">
+            <div class="auth-form">
+                <h2>Sign Up</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="signup-name">Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
