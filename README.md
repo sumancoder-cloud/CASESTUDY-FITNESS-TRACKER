@@ -91,7 +91,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Support
 
-For support, email support@suman.tati2005@gmail.com or join our Slack channel.
+For support, suman.tati2005@gmail.com .
 
 ---
 
