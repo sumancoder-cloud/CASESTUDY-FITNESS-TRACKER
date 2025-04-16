@@ -30,11 +30,12 @@ FitTrack is a comprehensive fitness tracking web application built with React an
   - Data persistence
 
 ## 🚀 Technologies Used
-
+- HTML
+- CSS
+- JAVASCRIPT
 - React 18
 - TypeScript
 - Tailwind CSS
-- Chart.js
 - Vite
 - Lucide Icons
 
