@@ -95,4 +95,4 @@ For support, suman.tati2005@gmail.com .
 
 ---
 
-Made with ❤️ by [TATI SUMAN YADAV]
+Made  by [TATI SUMAN YADAV]
